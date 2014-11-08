@@ -1,5 +1,5 @@
 # Stanford Portable Library folder
-pset4/spl/*
+pset4/spl/**
 
 # Windows image file caches
 Thumbs.db
