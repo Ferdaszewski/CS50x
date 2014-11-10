@@ -7,7 +7,7 @@
  * Computer Science 50
  * Problem Set 5
  *
- * Recovers JPEGs from a forensic image passed in as a commant line argument.
+ * Recovers JPEGs from a forensic image passed in as a command line argument.
  */
  
 #include <stdio.h>
