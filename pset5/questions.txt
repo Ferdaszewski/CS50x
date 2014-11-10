@@ -1,0 +1,25 @@
+0.  BMP: Max of 32-bit per pixel (4,294,967,296 colors)
+        GIF:  Max of 8-bit per pixel (256 colors)
+        JPEG:  Max of 8-bit per pixel per RGB chanel (256x256x256 = 16,777,216 colors)
+        PNG:  Max of 8-bit per pixel per RGB chanel (256x256x256 = 16,777,216 colors)
+1.  GIF image format supports animation
+2.  Lossy compression permanently reduces image quality for a smaller file size. Lossless compression has a larger file size vs. lossy, but not reduction in image quality.
+3.  JPEG uses lossy compression
+4.  When a file is deleted on the FAT file system, generaly, just the allocation table of the file is deleated and then the sectors are moved to a free sectore table
+5.  To ensure with hight probability that deleated files cannot be recovered, one should either phisicaly destroy the media, or overwrite the disk using a DoD or other pattern
+6.  stdint.h is a standard C library that has different width integer types defined
+7.  uint8_t, uint32_t, int32_t, and uint16_t are all specific width integer types defined in stdint.h and allow bit level transfersing of data steams. The can be typedef'd to match the Mircrosoft BMP integer deffinitions.
+8.  BYTE: 8 bits
+        DWORD: 32 bits
+        LONG: 32 bits
+        WORD: 16 bits
+9.  Leading bytes of a BMP file are BM (42 2D Hex)
+10. bfSize is in the BMP file header and is the size in bytes of the BMP file.  biSize is in the BMP info header and is the number of bytes requred by the structure BITMAPINFOHEADER
+11. If biHeight is negative the BMP is a top down file with an orgin the upper-left corner.
+12. biBitCount is the field in BITMAPINFOHEADER that specifies the color depth of the image (bits per pixel)
+13. fopen may return NULL if the output file was not abel to be created or opened for any reason
+14. the theird argument in fread is the number of elements to read and in this case, we are only reading one struct at a time
+15. with a pixel width of 3, there are 3 bytes of padding needed at the end of each scan line
+16. fseek moves the file pointer up stream and in this contects, skips over the potential padding at the end of scan lines
+17. SEEK_CUR is a system constant that is the current position of the file pointer
+18. Milo Banana dun it

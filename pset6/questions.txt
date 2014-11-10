@@ -1,0 +1,17 @@
+0.  pneumonoultramicroscopicsilicovolcanoconiosis is the longest word (45 characters) in an english dictionary (OED).
+1.  getrusage returnes usage of reasources
+2.  the struct rusage has 16 members (2 struc's and 14 long's)
+3.  before and after are passed by reference to calculate so they can be taken in as structs to be used in the CPU time calcultion of the program minus the sytem CPU use
+4.  main reads words from the text file char by char untill EOF is reached.  For each char if it is alpha or an apostraphy, it is added to an array to hold the word.
+    two cornner casses are checked.  If the word is longer that the maximal word, the rest of the word is read an discarded and the loop starts again.  The second check is
+    for a number in the word, if found, the rest of the word is discarded and the loop starts again.  If neither of these cases triggers, the word is compleatly read into the
+    array and to close it out the NULL terminator is added to the array.  Thent he word is passed to the function to check it's spellings and counteres are indexed and reset
+    to start looking for the next word.
+5.  fgetc was used vs. fscanf (to get entire words at one time) so that words longer than in a dictionary, or words with numeric characters could be discarded and not checked.
+6.  the parameters for check and load are defined as const so they cannot be changed by the function (intentionaly or unintentianaly), keeping the programers honest
+7.  I used a tries data structure for the dictionary.  With the large number of entries in the dictionary, it seemed like a good mix of memory efficiency and speed
+    (reading in and checking). Each trie node is a stuct with an array of pointers to 27 other node structs as well as a bool value to flag if at end of a word.
+8.  the first time I got it working, my code was fairly fast (.272 testst).  And absolutly no memory leaks/errors
+9.  I made some changes to optimize the program.  I used calloc vs. malloc + a for look to clear the memory of garbage values.  I also tightened up and removed a few if statments
+    to reduce the number of checks for each word.  My last speed checks were around .250 (testst).
+10. While I like the trie structure for it's ballance of memory and speed, If I was to write this again, I would use a hash table, to optimize speed while using more memory.
